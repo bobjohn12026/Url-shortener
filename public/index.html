@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔗 URL Shortener</h1>
+      <p>Turn long URLs into short, shareable links</p>
+    </header>
+
+    <main>
+      <div class="form-section">
+        <form id="shortenForm">
+          <div class="input-group">
+            <input
+              type="url"
+              id="urlInput"
+              placeholder="Paste your long URL here..."
+              required
+              autocomplete="off"
+            />
+            <button type="submit" class="btn-primary">Shorten</button>
+          </div>
+          <span id="error" class="error"></span>
+        </form>
+      </div>
+
+      <div id="resultSection" class="result-section hidden">
+        <div class="result-card">
+          <div class="result-item">
+            <label>Original URL:</label>
+            <p id="originalUrl" class="original-url"></p>
+          </div>
+          <div class="result-item">
+            <label>Short URL:</label>
+            <div class="short-url-container">
+              <input type="text" id="shortUrl" class="short-url" readonly />
+              <button type="button" class="btn-copy" onclick="copyToClipboard()">Copy</button>
+            </div>
+            <p id="copyMessage" class="copy-message"></p>
+          </div>
+          <div class="result-item">
+            <label>Short Code:</label>
+            <p id="shortCode" class="short-code"></p>
+          </div>
+        </div>
+        <button type="button" class="btn-secondary" onclick="resetForm()">Shorten Another URL</button>
+      </div>
+
+      <div id="loadingSpinner" class="spinner hidden"></div>
+    </main>
+
+    <footer>
+      <p>© 2024 URL Shortener | <a href="https://github.com/bobjohn12026/url-shortener">GitHub</a></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
